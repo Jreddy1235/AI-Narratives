@@ -1,0 +1,512 @@
+body.casino-bg {
+  background: linear-gradient(to bottom, #7fd3ff 0%, #4fa9ff 35%, #2d4fb0 75%, #1a1640 100%);
+  color: #f8f9fa;
+}
+
+.neon-text {
+  color: #0d6efd;
+  text-shadow: 0 0 10px rgba(13,110,253,0.8), 0 0 30px rgba(13,110,253,0.6);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, rgba(14,31,89,0.98), rgba(11,23,63,0.98));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.room-card {
+  background: linear-gradient(135deg, #3ac8ff, #2b7dff);
+  border-radius: 0.75rem;
+  border: 2px solid rgba(255,255,255,0.7);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* Lobby layout inspired by casual mobile games */
+.lobby-topbar {
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border: 2px solid rgba(255,255,255,0.8);
+}
+
+.topbar-metrics .metric-pill {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  transition: all 0.3s ease;
+}
+
+.metric-pill.timer-warning {
+  background: rgba(255, 165, 0, 0.3);
+  animation: pulse-warning 1s infinite;
+}
+
+.metric-pill.timer-danger {
+  background: rgba(255, 0, 0, 0.3);
+  animation: pulse-danger 0.5s infinite;
+}
+
+@keyframes pulse-warning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes pulse-danger {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.metric-pill .label {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.metric-pill .value {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.lobby-main {
+  /* main lobby area under the top bar */
+  min-height: calc(100vh - 150px);
+}
+
+.lobby-title {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+.room-rail-wrapper {
+  max-width: 980px;
+  margin: 16px auto 0 auto;
+}
+
+.room-rail {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 4px;
+  scroll-behavior: smooth;
+}
+
+.room-card-large {
+  min-width: 240px;
+  max-width: 260px;
+  height: 320px;
+  border-radius: 24px;
+  padding: 10px;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.45);
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.room-card-large:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.room-card-large .room-card-inner {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
+  border-radius: 18px;
+  padding: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.room-card-large .room-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.room-card-large .room-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.room-label-strip {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.rail-arrow {
+  font-size: 1.8rem;
+}
+
+.lobby-bottombar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.85));
+}
+
+.bottombar-item {
+  padding: 4px 10px;
+  border-radius: 999px;
+  opacity: 0.8;
+}
+
+.bottombar-item.active {
+  background: rgba(255,255,255,0.16);
+  opacity: 1;
+}
+
+/* Cartoonish Room Backgrounds with Illustrated Style */
+
+.room-cozy-bg {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,235,59,0.8) 8%, transparent 8%),
+    radial-gradient(circle at 80% 20%, rgba(255,235,59,0.7) 6%, transparent 6%),
+    radial-gradient(circle at 60% 70%, rgba(255,167,38,0.8) 10%, transparent 10%),
+    radial-gradient(circle at 30% 80%, rgba(255,152,0,0.7) 7%, transparent 7%),
+    radial-gradient(circle at 50% 50%, rgba(255,193,7,0.3) 25%, transparent 25%),
+    linear-gradient(135deg, #ff6f00 0%, #ff8f00 50%, #ffa726 100%);
+  filter: saturate(1.3) contrast(1.1);
+}
+
+.room-kiln-bg {
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255,255,255,0.15) 25px, rgba(255,255,255,0.15) 50px),
+    radial-gradient(circle at 50% 40%, rgba(233,30,99,0.9) 15%, transparent 15%),
+    radial-gradient(circle at 30% 60%, rgba(156,39,176,0.85) 12%, transparent 12%),
+    radial-gradient(circle at 70% 65%, rgba(103,58,183,0.8) 10%, transparent 10%),
+    radial-gradient(ellipse at 50% 80%, rgba(255,64,129,0.4) 30%, transparent 30%),
+    linear-gradient(135deg, #d32f2f 0%, #c2185b 50%, #7b1fa2 100%);
+  filter: saturate(1.4) brightness(1.1);
+}
+
+.room-relic-bg {
+  background: 
+    radial-gradient(ellipse at 50% 20%, rgba(255,235,59,0.4) 15%, transparent 15%),
+    repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(139,69,19,0.25) 20px, rgba(139,69,19,0.25) 40px),
+    repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(139,69,19,0.25) 20px, rgba(139,69,19,0.25) 40px),
+    radial-gradient(circle at 70% 60%, rgba(78,52,46,0.6) 18%, transparent 18%),
+    radial-gradient(circle at 30% 75%, rgba(62,39,35,0.7) 15%, transparent 15%),
+    linear-gradient(180deg, #8d6e63 0%, #6d4c41 50%, #4e342e 100%);
+  filter: sepia(0.3) contrast(1.2);
+}
+
+.room-beginner-bg {
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5) 3%, transparent 3%),
+    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.4) 4%, transparent 4%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.45) 3.5%, transparent 3.5%),
+    radial-gradient(circle at 20% 80%, rgba(129,199,132,0.9) 22%, transparent 22%),
+    radial-gradient(circle at 80% 75%, rgba(102,187,106,0.85) 18%, transparent 18%),
+    radial-gradient(ellipse at 50% 50%, rgba(165,214,167,0.5) 40%, transparent 40%),
+    linear-gradient(135deg, #66bb6a 0%, #4caf50 50%, #43a047 100%);
+  filter: saturate(1.3) brightness(1.15);
+}
+
+.room-intermediate-bg {
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(255,255,255,0.08) 12px, rgba(255,255,255,0.08) 24px),
+    repeating-linear-gradient(-45deg, transparent, transparent 12px, rgba(0,0,0,0.08) 12px, rgba(0,0,0,0.08) 24px),
+    radial-gradient(circle at 25% 25%, rgba(41,182,246,0.9) 14%, transparent 14%),
+    radial-gradient(circle at 75% 35%, rgba(2,136,209,0.85) 12%, transparent 12%),
+    radial-gradient(circle at 50% 80%, rgba(1,87,155,0.8) 16%, transparent 16%),
+    radial-gradient(ellipse at 50% 50%, rgba(3,169,244,0.3) 35%, transparent 35%),
+    linear-gradient(135deg, #0288d1 0%, #0277bd 50%, #01579b 100%);
+  filter: saturate(1.4) brightness(1.1);
+}
+
+.room-high-bg {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255,87,34,0.5) 20%, transparent 20%),
+    repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.12) 10px, rgba(255,255,255,0.12) 20px),
+    repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0,0,0,0.12) 10px, rgba(0,0,0,0.12) 20px),
+    radial-gradient(circle at 30% 30%, rgba(255,87,34,0.9) 16%, transparent 16%),
+    radial-gradient(circle at 70% 60%, rgba(244,67,54,0.85) 14%, transparent 14%),
+    radial-gradient(ellipse at 50% 70%, rgba(229,57,53,0.4) 30%, transparent 30%),
+    linear-gradient(135deg, #d32f2f 0%, #c62828 50%, #b71c1c 100%);
+  filter: saturate(1.5) contrast(1.2);
+}
+
+/* Gameplay room layout */
+.room-topbar {
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.room-topbar-metrics .metric-pill {
+  background: #1f1a4d;
+  border-radius: 999px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.room-stage {
+  min-height: calc(100vh - 140px);
+}
+
+.room-panel-card {
+  background: linear-gradient(135deg, rgba(14,31,89,0.98), rgba(11,23,63,0.98));
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+.room-panel-card .card-header {
+  border-bottom-color: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+
+.powerup-chip {
+  border-radius: 999px;
+  border: none;
+  padding-inline: 14px;
+  font-size: 0.75rem;
+}
+
+.powerup-chip.chip-info {
+  background: rgba(13,110,253,0.85);
+  color: #fff;
+}
+
+.powerup-chip.chip-success {
+  background: rgba(25,135,84,0.9);
+  color: #fff;
+}
+
+.powerup-chip.chip-warning {
+  background: rgba(255,193,7,0.9);
+  color: #111;
+}
+
+/* Number caller balls */
+.number-ball-large-wrapper {
+  min-width: 120px;
+}
+
+.number-ball-large {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #ffeb3b 40%, #f57c00 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.number-ball-large span {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #222;
+}
+
+.number-history-bar {
+  min-height: 40px;
+}
+
+.number-history-ball {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #90caf9 55%, #1565c0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #08213a;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.45);
+}
+
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.bingo-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(0,0,0,0.12);
+  cursor: pointer;
+  background: #ffffff;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+  transition: transform 0.08s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.bingo-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.35);
+}
+
+.bingo-cell.marked {
+  background: #ffeb3b;
+  box-shadow: 0 0 14px rgba(255,235,59,0.9);
+}
+
+.bingo-cell.shake {
+  animation: bingo-shake 0.25s linear;
+}
+
+@keyframes bingo-shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.bingo-board-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 16px 18px 20px 18px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffb74d, #ff7043);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.55);
+}
+
+.bingo-board-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bingo-board-header span {
+  flex: 1;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* Floating AI avatar */
+#ai-avatar {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  z-index: 1050;
+}
+
+.ai-avatar-orb {
+  width: 140px;
+  height: 260px;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ai-orb-bob 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.ai-avatar-orb.talking {
+  animation: ai-orb-bob 1s ease-in-out infinite;
+}
+
+.ai-avatar-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: url("./ai-avatar.png") center bottom / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ai-eye {
+  display: none;
+}
+
+.ai-eye-left { left: 32%; }
+.ai-eye-right { right: 32%; }
+
+.ai-mouth {
+  display: none;
+}
+
+@keyframes ai-orb-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.ai-speech {
+  max-width: 260px;
+}
+
+.ai-speech-bubble {
+  background: rgba(5,5,16,0.92);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+.ai-input-row {
+  margin-top: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.ai-input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 999px;
+  border: none;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+.ai-send-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+}
+
+body.room-beginner {
+  background: radial-gradient(circle at top, #123524 0, #000 60%);
+}
+
+body.room-intermediate {
+  background: radial-gradient(circle at top, #101733 0, #000 60%);
+}
+
+body.room-high {
+  background: radial-gradient(circle at top, #3b0914 0, #000 60%);
+}

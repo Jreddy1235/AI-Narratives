@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room - Neon Bingo AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/public/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light casino-bg">
+  <!-- Top status bar -->
+  <div class="room-topbar d-flex align-items-center justify-content-between px-3 py-2">
+    <div class="d-flex align-items-center gap-2">
+      <span class="navbar-brand mb-0 h5">Neon Bingo AI</span>
+    </div>
+    <div class="d-flex align-items-center gap-2 room-topbar-metrics">
+      <div class="metric-pill">
+        <span class="label">Room</span>
+        <span class="value" id="roomInfo"></span>
+      </div>
+      <div class="metric-pill">
+        <span class="label">Time</span>
+        <span class="value" id="gameTimer">2:00</span>
+      </div>
+      <div class="metric-pill">
+        <span class="label">Coins</span>
+        <span class="value" id="roomTopCoins">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main stage -->
+  <div class="room-stage container-fluid py-3">
+    <div class="row justify-content-center">
+      <div class="col-xl-9">
+        <div class="row g-3">
+          <div class="col-lg-8">
+            <div class="card room-panel-card text-light">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Bingo Card</span>
+            <span>Coins: <span id="coinCount">0</span></span>
+          </div>
+          <div class="card-body">
+            <div class="bingo-board-wrapper">
+              <div class="bingo-board-header">
+                <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+              </div>
+              <div id="bingoCard" class="bingo-grid"></div>
+            </div>
+          </div>
+            </div>
+            <div class="card room-panel-card text-light mt-3">
+          <div class="card-header">Number Caller</div>
+          <div class="card-body">
+            <div class="number-caller-layout d-flex align-items-center justify-content-between flex-wrap gap-3">
+              <div class="number-ball-large-wrapper d-flex align-items-center gap-3">
+                <div class="number-ball-large">
+                  <span id="currentNumber">--</span>
+                </div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="number-history-label small mb-1">Recent Numbers</div>
+                <div id="numberHistory" class="number-history-bar d-flex flex-wrap gap-2"></div>
+              </div>
+              <div class="caller-actions d-flex flex-column flex-sm-row gap-2 ms-sm-3">
+                <button id="startGameBtn" class="btn btn-primary">Start Game</button>
+                <button id="exitRoomBtn" class="btn btn-outline-light">Back to Lobby</button>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card room-panel-card text-light mb-3">
+          <div class="card-header">Status</div>
+          <div class="card-body">
+            <div id="statusText">Waiting to start…</div>
+            <div class="mt-2 small">Win Types: Single Line, Full House</div>
+          </div>
+            </div>
+            <div class="card room-panel-card text-light">
+          <div class="card-header">Powerups (Simulated)</div>
+          <div class="card-body">
+            <button class="btn btn-sm powerup-chip chip-info me-1" id="powerupHint">AI Hint</button>
+            <button class="btn btn-sm powerup-chip chip-success me-1" id="powerupFreeMark">Free Mark</button>
+            <button class="btn btn-sm powerup-chip chip-warning" id="powerupSlow">Slow Caller</button>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/public/js/bot.js"></script>
+  <script src="/public/js/game.js"></script>
+</body>
+</html>
